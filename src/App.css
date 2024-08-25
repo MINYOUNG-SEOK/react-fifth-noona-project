@@ -28,6 +28,7 @@ html {
 .order-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 15px;
   border: 2px solid #ddd;
   border-radius: 10px;
@@ -36,6 +37,11 @@ html {
   position: relative;
   width: 100%;
   box-sizing: border-box;
+}
+
+.order-details {
+  flex-grow: 1;
+  min-width: 120px;
 }
 
 
@@ -132,7 +138,7 @@ html {
 .total-section {
   margin-top: 20px;
   text-align: center;
-  padding-top: 15px;
+  padding-top: 20px;
   border-top: 1px solid #ddd;
 }
 
@@ -143,10 +149,23 @@ html {
   margin-bottom: 10px;
 }
 
+.total-quantity {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.max-order-warning {
+  font-size: 13px;
+  color: red;
+  margin-top: 2px;
+}
+
 .total-price {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
   white-space: nowrap;
 }
 

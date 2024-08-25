@@ -59,9 +59,9 @@ function App() {
           image: "/img/lavender.png",
         },
         {
-          key: "GrapefruitMangoCocoFrappuccino",
-          title: "자몽 망고 코코 프라푸치노",
-          subtitle: "Grapefruit Mango Coco Frappuccino",
+          key: "GrapefruitMangoFrappuccino",
+          title: "자몽 망고 프라푸치노",
+          subtitle: "Grapefruit Mango Frappuccino",
           image: "/img/mango.jpg",
         },
       ].map((item) => (
@@ -72,7 +72,7 @@ function App() {
           <div className="order-details">
             <p className="order-title">{item.title}</p>
             <p className="order-subtitle">{item.subtitle}</p>
-            <p className="order-size">ICED | {orders[item.key].size}</p>
+            <p className="order-size">ICED | Tall</p>
           </div>
           <div className="order-price">
             {orders[item.key].price.toLocaleString()}원
@@ -112,7 +112,9 @@ function App() {
         <div className="total-summary">
           <span className="total-quantity">
             총 {calculateTotalQuantity()}개 / 20개
+            <p className="max-order-warning">최대 20개까지 주문 가능합니다.</p>
           </span>
+
           <span className="total-price">
             {calculateTotalPrice().toLocaleString()}원
           </span>
