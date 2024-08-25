@@ -203,10 +203,8 @@ html {
   .order-total {
     width: auto;
     margin-left: auto;
-    margin-top: 10px;
     text-align: right;
   }
-
 
   .order-btn {
     padding: 10px;
