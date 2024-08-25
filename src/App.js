@@ -12,16 +12,16 @@ function App() {
     );
   };
 
-  const updateQuantity = (size, quantity) => {
+  const updateQuantity = (menu, quantity) => {
     const totalQuantity = calculateTotalQuantity();
 
     if (
       quantity >= 0 &&
-      totalQuantity + (quantity - orders[size].quantity) <= 20
+      totalQuantity + (quantity - orders[menu].quantity) <= 20
     ) {
       dispatch({
         type: "UPDATE_ORDER",
-        payload: { size, quantity },
+        payload: { menu, quantity },
       });
     }
   };
@@ -39,41 +39,71 @@ function App() {
         <h1 className="title">장바구니</h1>
       </div>
 
-      {["Tall", "Grande", "Venti"].map((size) => (
-        <div key={size} className="order-item">
-          {/* <div className="checkbox">
-            <input type="checkbox" />
-          </div> */}
+      {[
+        {
+          key: "IcedCaffeAmericano",
+          title: "아이스 카페 아메리카노",
+          subtitle: "Iced Caffe Americano",
+          image: "/img/coffee.jpg",
+        },
+        {
+          key: "IcedCaffeLatte",
+          title: "아이스 카페 라떼",
+          subtitle: "Iced Caffe Latte",
+          image: "/img/latte.jpg",
+        },
+        {
+          key: "IcedLavenderCafeBreve",
+          title: "아이스 라벤더 카페 브레베",
+          subtitle: "Iced Lavender Cafe Breve",
+          image: "/img/lavender.png",
+        },
+        {
+          key: "GrapefruitMangoCocoFrappuccino",
+          title: "자몽 망고 코코 프라푸치노",
+          subtitle: "Grapefruit Mango Coco Frappuccino",
+          image: "/img/mango.jpg",
+        },
+      ].map((item) => (
+        <div key={item.key} className="order-item">
           <div className="order-image">
-            <img src="/img/coffee.jpg" alt="coffee" />
+            <img src={item.image} alt={item.title} />
           </div>
           <div className="order-details">
-            <p className="order-title">아이스 카페 아메리카노</p>
-            <p className="order-subtitle">Iced Caffe Americano</p>
-            <p className="order-size">ICED | {size}</p>
+            <p className="order-title">{item.title}</p>
+            <p className="order-subtitle">{item.subtitle}</p>
+            <p className="order-size">ICED | {orders[item.key].size}</p>
           </div>
           <div className="order-price">
-            {orders[size].price.toLocaleString()}원
+            {orders[item.key].price.toLocaleString()}원
           </div>
           <div className="order-actions">
             <button
               onClick={() =>
-                updateQuantity(size, Math.max(0, orders[size].quantity - 1))
+                updateQuantity(
+                  item.key,
+                  Math.max(0, orders[item.key].quantity - 1)
+                )
               }
               className="quantity-btn"
             >
               -
             </button>
-            <span className="quantity">{orders[size].quantity}</span>
+            <span className="quantity">{orders[item.key].quantity}</span>
             <button
-              onClick={() => updateQuantity(size, orders[size].quantity + 1)}
+              onClick={() =>
+                updateQuantity(item.key, orders[item.key].quantity + 1)
+              }
               className="quantity-btn"
             >
               +
             </button>
           </div>
           <div className="order-total">
-            {(orders[size].quantity * orders[size].price).toLocaleString()}원
+            {(
+              orders[item.key].quantity * orders[item.key].price
+            ).toLocaleString()}
+            원
           </div>
         </div>
       ))}

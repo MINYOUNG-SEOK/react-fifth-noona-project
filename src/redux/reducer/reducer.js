@@ -1,8 +1,13 @@
 const initialState = {
   orders: {
-    Tall: { quantity: 0, price: 4500 },
-    Grande: { quantity: 0, price: 5300 },
-    Venti: { quantity: 0, price: 6100 },
+    IcedCaffeAmericano: { size: "Tall", quantity: 0, price: 4500 },
+    IcedCaffeLatte: { size: "Tall", quantity: 0, price: 5000 },
+    IcedLavenderCafeBreve: { size: "Tall", quantity: 0, price: 7000 },
+    GrapefruitMangoCocoFrappuccino: {
+      size: "Tall",
+      quantity: 0,
+      price: 7100,
+    },
   },
 };
 
@@ -13,8 +18,8 @@ function reducer(state = initialState, action) {
         ...state,
         orders: {
           ...state.orders,
-          [action.payload.size]: {
-            ...state.orders[action.payload.size],
+          [action.payload.menu]: {
+            ...state.orders[action.payload.menu],
             quantity: action.payload.quantity,
           },
         },
