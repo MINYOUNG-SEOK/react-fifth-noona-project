@@ -41,9 +41,9 @@ function App() {
 
       {["Tall", "Grande", "Venti"].map((size) => (
         <div key={size} className="order-item">
-          <div className="checkbox">
+          {/* <div className="checkbox">
             <input type="checkbox" />
-          </div>
+          </div> */}
           <div className="order-image">
             <img src="/img/coffee.jpg" alt="coffee" />
           </div>
