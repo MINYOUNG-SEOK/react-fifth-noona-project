@@ -53,15 +53,15 @@ function App() {
           image: "/img/latte.jpg",
         },
         {
-          key: "IcedLavenderCafeBreve",
-          title: "아이스 라벤더 카페 브레베",
-          subtitle: "Iced Lavender Cafe Breve",
+          key: "IcedLavenderBreve",
+          title: "아이스 라벤더 브레베",
+          subtitle: "Iced Lavender Breve",
           image: "/img/lavender.png",
         },
         {
-          key: "GrapefruitMangoFrappuccino",
-          title: "자몽 망고 프라푸치노",
-          subtitle: "Grapefruit Mango Frappuccino",
+          key: "MangoFrappuccino",
+          title: "망고 프라푸치노",
+          subtitle: "Mango Frappuccino",
           image: "/img/mango.jpg",
         },
       ].map((item) => (
