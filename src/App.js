@@ -58,12 +58,6 @@ function App() {
           subtitle: "Iced Lavender Breve",
           image: "/img/lavender.png",
         },
-        {
-          key: "MangoFrappuccino",
-          title: "망고 프라푸치노",
-          subtitle: "Mango Frappuccino",
-          image: "/img/mango.jpg",
-        },
       ].map((item) => (
         <div key={item.key} className="order-item">
           <div className="order-image">

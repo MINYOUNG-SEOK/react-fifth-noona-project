@@ -3,11 +3,6 @@ const initialState = {
     IcedCaffeAmericano: { size: "Tall", quantity: 0, price: 4500 },
     IcedCaffeLatte: { size: "Tall", quantity: 0, price: 5000 },
     IcedLavenderBreve: { size: "Tall", quantity: 0, price: 7000 },
-    MangoFrappuccino: {
-      size: "Tall",
-      quantity: 0,
-      price: 7100,
-    },
   },
 };
 
