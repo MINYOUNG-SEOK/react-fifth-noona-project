@@ -1,38 +1,212 @@
-.App {
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f1;
+  margin: 0;
+  padding: 0;
+}
+
+.order-page {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.title-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  position: relative;
+}
+
+.order-item:hover {
+  border: 2px solid #006633;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+}
+
+.order-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.order-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.order-details {
+  flex-grow: 1;
+}
+
+.order-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.order-subtitle {
+  font-size: 12px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.order-size {
+  font-size: 12px;
+  color: #666;
+}
+
+.order-price {
+  font-size: 14px;
+  color: #444444;
+  margin-right: 15px;
+  text-align: right;
+}
+
+.order-actions {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-btn {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  margin: 0 5px;
+  color: #444444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.quantity {
+  font-size: 14px;
+  min-width: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.order-total {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  text-align: right;
+  min-width: 60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.total-section {
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.total-summary {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  /* 양쪽 끝으로 요소 정렬 */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 10px;
+}
+
+.total-price {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.order-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #006633;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+/* 추가된 부분 */
+
+/* 비활성화된 주문하기 버튼 스타일 */
+.order-btn:disabled {
+  background-color: #ccc;
+  /* 버튼이 비활성화되었을 때의 배경 색상 */
+  color: #999;
+  /* 버튼이 비활성화되었을 때의 텍스트 색상 */
+  cursor: not-allowed;
+  /* 버튼이 비활성화되었을 때의 커서 스타일 */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 모바일 반응형 디자인 */
+@media (max-width: 480px) {
+  .order-page {
+    padding: 10px;
+    /* 모바일에서의 패딩 조정 */
   }
-  to {
-    transform: rotate(360deg);
+
+  .order-item {
+    padding: 10px;
+    /* 모바일에서의 주문 아이템 패딩 조정 */
+  }
+
+  .title {
+    font-size: 18px;
+    /* 모바일에서 타이틀 폰트 크기 조정 */
+  }
+
+  .order-title {
+    font-size: 12px;
+    /* 모바일에서 주문 타이틀 폰트 크기 조정 */
+  }
+
+  .order-price,
+  .order-total {
+    font-size: 12px;
+    /* 모바일에서 가격과 합계 금액의 폰트 크기 조정 */
+  }
+
+  .total-quantity,
+  .total-price {
+    font-size: 15px;
+  }
+
+  .order-btn {
+    padding: 10px;
+    /* 모바일에서 주문 버튼의 패딩 조정 */
+    font-size: 15px;
+    /* 모바일에서 주문 버튼의 폰트 크기 조정 */
   }
 }
