@@ -171,6 +171,7 @@ html {
 @media (max-width: 480px) {
   .order-page {
     padding: 10px;
+    max-width: 80%;
   }
 
   .order-item {
